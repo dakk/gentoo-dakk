@@ -9,8 +9,8 @@ inherit eutils multilib unpacker
 DESCRIPTION="A Qt-based program for syncing your MEGA account in your PC. This is the official app."
 HOMEPAGE="http://mega.co.nz"
 SRC_URI="
-		x86? ( https://mega.nz/linux/MEGAsync/Debian_7.0/i386/megasync-Debian_7.0_i386.deb )
-		amd64? ( https://mega.nz/linux/MEGAsync/Debian_7.0/amd64/megasync-Debian_7.0_amd64.deb )
+		x86? ( https://mega.nz/linux/MEGAsync/Debian_8.0/i386/megasync-Debian_8.0_i386.deb )
+		amd64? ( https://mega.nz/linux/MEGAsync/Debian_8.0/amd64/megasync-Debian_8.0_amd64.deb )
 		"
 
 LICENSE="MEGA"
@@ -32,8 +32,8 @@ S="${WORKDIR}"
 
 src_unpack(){
 	unpack ${A}
-	unpack ./data.tar.gz
-	rm -v control.tar.gz data.tar.gz debian-binary
+	unpack ./data.tar.xz
+	rm -v control.tar.gz data.tar.xz debian-binary
 }
 
 pkg_setup(){
